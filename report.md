@@ -56,7 +56,7 @@ The application follows a client-server architecture where services run in isola
 │  │            macvlan Network (L2 Mode)              │   │
 │  │            Subnet: 192.168.1.0/24                │   │
 │  │            Gateway: 192.168.1.1                  │   │
-│  │            Driver: ipvlan                        │   │
+│  │            Driver: macvlan                        │   │
 │  │            Parent: eth0                          │   │
 │  └──────────────────────────────────────────────────┘   │
 │                                                         │
@@ -163,6 +163,7 @@ services:
   database:
     volumes:
       - pgdata:/var/lib/postgresql/data
+``` 
       ### How It Works
 
 1. Docker creates a named volume `pgdata` managed by the `local` driver
